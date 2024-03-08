@@ -102,4 +102,5 @@ public class TaskDataBaseHelper extends SQLiteOpenHelper {
         return db.update(DB_TABLE, values, COLUMN_ID + " = ?",
                 new String[]{String.valueOf(taskModel.getId())});
     }
+
 }

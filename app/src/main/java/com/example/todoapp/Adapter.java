@@ -5,20 +5,29 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
     LayoutInflater inflater;
     List<TaskModel> taskModels;
+    List<TaskModel> fullLists;
     Adapter(Context context, List<TaskModel> taskModels){
         this.inflater = LayoutInflater.from(context);
         this.taskModels = taskModels;
+        this.fullLists = new ArrayList<>(taskModels);
+    }
+    public void filterList(List<TaskModel> filteredList) {
+        taskModels = filteredList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -42,7 +51,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public int getItemCount() {
         return taskModels.size();
     }
-    public  class  ViewHolder extends  RecyclerView.ViewHolder{
+            public  class  ViewHolder extends  RecyclerView.ViewHolder{
         TextView tTitle,tDate,tTime;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,4 +68,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             });
         }
     }
+
+
 }
