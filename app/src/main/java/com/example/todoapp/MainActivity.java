@@ -5,6 +5,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.provider.FontsContractCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,12 +14,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -31,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     Adapter adapter;
     List<TaskModel> taskModels;
     FloatingActionButton fab;
+    TaskDataBaseHelper taskDataBaseHelper = new TaskDataBaseHelper(this);
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,17 +64,25 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-@Override
+
+    @Override
 public boolean onCreateOptionsMenu(Menu menu) {
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.search_menu, menu);
+    inflater.inflate(R.menu.calendar_menu, menu);
     MenuItem searchItem = menu.findItem(R.id.search);
     SearchView searchView = (SearchView) searchItem.getActionView();
     EditText searchEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
     ImageView closeButton = searchView.findViewById(androidx.appcompat.R.id.search_close_btn);
-    // Set the color of the close button
-    closeButton.setColorFilter(Color.WHITE);
+
     searchEditText.setTextColor(Color.WHITE);
+        if (closeButton != null) {
+            // Apply color filter
+            closeButton.setColorFilter(Color.WHITE);
+        } else {
+            Log.e("CloseButton", "Close button not found");
+        }
+
     searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
         @Override
         public boolean onQueryTextSubmit(String query) {
@@ -92,4 +108,19 @@ public boolean onCreateOptionsMenu(Menu menu) {
         adapter.filterList(filteredList);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.calendar){
+            Toast.makeText(getApplicationContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    protected void onResume() {
+        super.onResume();
+        taskModels.clear();
+        taskModels.addAll(taskDataBaseHelper.getTasks());
+        adapter.notifyDataSetChanged();
+    }
 }
