@@ -3,6 +3,10 @@ plugins {
 }
 
 android {
+  lint{
+      baseline = file("lint-baseline.xml")
+  }
+
     namespace = "com.example.todoapp"
     compileSdk = 34
 
@@ -15,6 +19,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
+
 
     buildTypes {
         release {
