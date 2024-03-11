@@ -1,4 +1,4 @@
-package com.example.todoapp;
+package com.example.todoapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +20,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.todoapp.R;
+import com.example.todoapp.models.TaskModel;
+import com.example.todoapp.utilities.TaskDataBaseHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

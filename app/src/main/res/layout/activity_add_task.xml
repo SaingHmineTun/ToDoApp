@@ -4,64 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTaskActivity">
+    tools:context=".activities.AddTaskActivity">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarAddTask"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:title="Add Tasks"
-        app:titleTextColor="#FFFFFF"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/noteTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@null"
-        android:hint="Add Note"
-        android:padding="18dp"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarAddTask" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Add Tasks"
+        app:titleTextColor="#FFFFFF" />
 
-    <EditText
-        android:id="@+id/noteDetail"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutNoteTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/background"
-        android:gravity="top|start"
-        android:hint="Note Details"
-        android:inputType="textMultiLine"
-        android:lineSpacingExtra="10dp"
-        android:lines="8"
-        android:maxLines="10"
-        android:minLines="6"
-        android:padding="10dp"
-        android:scrollbars="vertical"
-        android:textSize="20sp"
+        android:hint="@string/add_note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarAddTask">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/noteTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="18dp"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutNoteDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/note_details"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noteTitle" />
 
-    <Button
+        app:layout_constraintTop_toBottomOf="@+id/layoutNoteTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/noteDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:lineSpacingExtra="10dp"
+            android:lines="8"
+            android:maxLines="10"
+            android:minLines="6"
+            android:scrollbars="vertical"
+            android:textSize="20sp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Add Task"
+        android:text="@string/add_task"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noteDetail" />
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@id/layoutNoteDetail"
+        app:layout_constraintTop_toBottomOf="@+id/layoutNoteDetail"
+
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

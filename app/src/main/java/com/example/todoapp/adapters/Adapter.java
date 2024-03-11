@@ -1,17 +1,18 @@
-package com.example.todoapp;
+package com.example.todoapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.todoapp.activities.DetailActivity;
+import com.example.todoapp.R;
+import com.example.todoapp.models.TaskModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
     LayoutInflater inflater;
     List<TaskModel> taskModels;
     List<TaskModel> fullLists;
-    Adapter(Context context, List<TaskModel> taskModels){
+    public Adapter(Context context, List<TaskModel> taskModels){
         this.inflater = LayoutInflater.from(context);
         this.taskModels = taskModels;
         this.fullLists = new ArrayList<>(taskModels);

@@ -1,4 +1,4 @@
-package com.example.todoapp;
+package com.example.todoapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.example.todoapp.R;
+import com.example.todoapp.models.TaskModel;
+import com.example.todoapp.utilities.TaskDataBaseHelper;
 
 import java.util.Calendar;
 
@@ -52,7 +55,7 @@ public class AddTaskActivity extends AppCompatActivity {
                 TaskModel taskModel = new TaskModel(title.getText().toString(),details.getText().toString(),toDayDate,currentTime);
                 TaskDataBaseHelper db = new TaskDataBaseHelper(AddTaskActivity.this);
                 db.addTasks(taskModel);
-                Intent intent = new Intent(AddTaskActivity.this,MainActivity.class);
+                Intent intent = new Intent(AddTaskActivity.this, MainActivity.class);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Task Saved",Toast.LENGTH_SHORT).show();
             }

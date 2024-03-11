@@ -4,4 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="cyan">#FF00FFFF</color>
     <color name="indigo">#FF4B0082</color>
+
+    <color name="primary_color">#1E3A57</color>
+    <color name="danger_color">#5E120A</color>
+    <color name="card_color">#DDD</color>
 </resources>

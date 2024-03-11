@@ -1,9 +1,9 @@
-package com.example.todoapp;
+package com.example.todoapp.models;
 
 public class TaskModel {
     int id;
     String taskTitle,taskDetail,taskDate,taskTime;
-    TaskModel(){
+    public TaskModel(){
 
     }
 

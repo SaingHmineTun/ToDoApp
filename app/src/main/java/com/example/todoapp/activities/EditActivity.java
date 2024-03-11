@@ -1,4 +1,4 @@
-package com.example.todoapp;
+package com.example.todoapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,8 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.todoapp.adapters.Adapter;
+import com.example.todoapp.R;
+import com.example.todoapp.models.TaskModel;
+import com.example.todoapp.utilities.TaskDataBaseHelper;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -49,15 +55,14 @@ public class EditActivity extends AppCompatActivity {
             }
         });
     }
+
     private String getCurrentDate() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        String formattedDate = dateFormat.format(new Date());
-        return formattedDate;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
+        return dateFormat.format(new Date());
     }
 
     private String getCurrentTime() {
-        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-        String formattedTime = timeFormat.format(new Date());
-        return formattedTime;
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        return timeFormat.format(new Date());
     }
 }
