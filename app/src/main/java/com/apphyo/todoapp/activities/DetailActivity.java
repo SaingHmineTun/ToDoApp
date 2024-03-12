@@ -1,4 +1,4 @@
-package com.example.todoapp.activities;
+package com.apphyo.todoapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,9 +21,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.todoapp.R;
-import com.example.todoapp.models.TaskModel;
-import com.example.todoapp.utilities.TaskDataBaseHelper;
+import com.apphyo.todoapp.R;
+import com.apphyo.todoapp.models.TaskModel;
+import com.apphyo.todoapp.utilities.TaskDataBaseHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -58,7 +58,6 @@ public class DetailActivity extends AppCompatActivity {
         time.setText(taskModel.getTaskTime());
          editTextTitle.setText(taskModel.getTaskTitle());
         editTextDetail.setText(taskModel.getTaskDetail());
-        Toast.makeText(getApplicationContext(),"id"+taskModel.getId(),Toast.LENGTH_SHORT).show();
     }
 
     @Override

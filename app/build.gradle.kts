@@ -7,13 +7,13 @@ android {
       baseline = file("lint-baseline.xml")
   }
 
-    namespace = "com.example.todoapp"
+    namespace = "com.apphyo.todoapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.todoapp"
-        minSdk = 24
-        targetSdk = 33
+        applicationId = "com.apphyo.todoapp"
+        minSdk = 26
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

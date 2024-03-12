@@ -6,6 +6,6 @@
     <color name="indigo">#FF4B0082</color>
 
     <color name="primary_color">#1E3A57</color>
-    <color name="danger_color">#5E120A</color>
-    <color name="card_color">#DDD</color>
+    <color name="danger_color">#7E326A</color>
+    <color name="card_color">#DDE</color>
 </resources>

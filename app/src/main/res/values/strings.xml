@@ -6,4 +6,10 @@
     <string name="enter_your_text_here">Enter your text here</string>
     <string name="add_task_button">Add Task Button</string>
     <string name="task_icon">Task Icon</string>
+    <string name="title">Title</string>
+    <string name="details">Details</string>
+    <string name="update_task">Update Task</string>
+    <string name="search">Search</string>
+    <string name="sample_note_title">sample note title</string>
+    <string name="_12_25">12:25</string>
 </resources>

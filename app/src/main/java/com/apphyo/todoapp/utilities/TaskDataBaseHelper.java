@@ -1,4 +1,4 @@
-package com.example.todoapp.utilities;
+package com.apphyo.todoapp.utilities;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.example.todoapp.models.TaskModel;
+import com.apphyo.todoapp.models.TaskModel;
 
 import java.util.ArrayList;
 import java.util.List;

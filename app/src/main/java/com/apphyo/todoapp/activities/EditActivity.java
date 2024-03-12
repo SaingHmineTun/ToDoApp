@@ -1,4 +1,4 @@
-package com.example.todoapp.activities;
+package com.apphyo.todoapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,10 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.todoapp.adapters.Adapter;
-import com.example.todoapp.R;
-import com.example.todoapp.models.TaskModel;
-import com.example.todoapp.utilities.TaskDataBaseHelper;
+import com.apphyo.todoapp.adapters.Adapter;
+import com.apphyo.todoapp.R;
+import com.apphyo.todoapp.models.TaskModel;
+import com.apphyo.todoapp.utilities.TaskDataBaseHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

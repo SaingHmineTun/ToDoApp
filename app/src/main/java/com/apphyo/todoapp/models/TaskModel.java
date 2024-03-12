@@ -1,8 +1,8 @@
-package com.example.todoapp.models;
+package com.apphyo.todoapp.models;
 
 public class TaskModel {
     int id;
-    String taskTitle,taskDetail,taskDate,taskTime;
+    private String taskTitle,taskDetail,taskDate,taskTime;
     public TaskModel(){
 
     }
